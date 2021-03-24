@@ -17,8 +17,8 @@ class Game{
         // Must bind event 'this.chooseColor' to 'this' (game object) to prevent
         // losing the reference to this Game class. Otherwise, the 'this' of the event
         // created will now be the button itself, instead of the game
-        this.chooseColor = this.chooseColor.bind(this)
         this.nextLevel = this.nextLevel.bind(this)
+        this.chooseColor = this.chooseColor.bind(this)
         this.toggleStartButton()
         this.level = 1
         this.colors = {
@@ -52,7 +52,7 @@ class Game{
         this.sequencePos = 0
         this.lightSequence()
         // Until sequence lighting is finished, click events are activated
-        setTimeout(()=>this.addClickEvents(), 1000*(this.level-1))
+        this.addClickEvents()
     }
 
     numberToColor(number){
@@ -124,12 +124,16 @@ class Game{
         const colorButton = ev.target.dataset.color
         const colorNumber = this.colorToNumber(colorButton)
         this.lightColor(colorButton)
-        
+
+        console.log(colorNumber)
+        console.log(this.sequence[this.sequencePos])
         if(colorNumber === this.sequence[this.sequencePos]){
             this.sequencePos++
+
             if(this.sequencePos === this.level){
                 this.level++
                 this.removeClickEvents()
+                
                 if(this.level === (LEVELS + 1)){
                     this.winner()
                 } else {
@@ -154,7 +158,7 @@ class Game{
     gameOver(){
         swal('Oops!', 'You missed the sequence, try again!', 'error')
             .then(() => {
-                this.removeClickEvents.bind(this)
+                this.removeClickEvents()
                 this.initialize()
             })
     }
