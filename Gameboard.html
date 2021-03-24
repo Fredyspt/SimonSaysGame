@@ -15,27 +15,6 @@
         <div id="green" class="color green left" data-color="green"></div>
         <button id="startButton" class="startBtn" onclick="startGame()">Start game</button>
     </div>
-    <script>
-        const blue = document.getElementById('blue')
-        const purple = document.getElementById('purple')
-        const orange = document.getElementById('orange')
-        const green = document.getElementById('green')
-        const startButton = document.getElementById('startButton')
-
-        class Game{
-            constructor(){
-                this.initialize()
-            }
-
-            initialize(){
-                startButton.classList.add('hide')
-            }
-        }
-
-        function startGame(){
-            var game = new Game()
-        }
-
-    </script>
+    <script src="game.js"></script>
 </body>
 </html>

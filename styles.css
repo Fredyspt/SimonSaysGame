@@ -32,34 +32,42 @@ body {
 
 .blue{
     background: #22a6b3;
+    transition: 350ms;
 }
 
 .blue.light{
     background: #7ed6df;
+    transform: scale(1.05);
 }
 
 .purple{
     background: #be2edd;
+    transition: 350ms;
 }
 
 .purple.light{
     background: #e056fd;
+    transform: scale(1.05);
 }
 
 .green{
     background: #6ab04c;
+    transition: 350ms;
 }
 
 .green.light{
-    background: #badc58
+    background: #badc58;
+    transform: scale(1.05);
 }
 
 .orange{
     background: #f0932b;
+    transition: 350ms;
 }
 
 .orange.light{
     background: #ffbe76;
+    transform: scale(1.05);
 }
 
 .startBtn{
