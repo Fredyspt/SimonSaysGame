@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <title>Simon Says</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="gameboard">
-        <div id="blue" class="color blue left" data-color="blue"></div>
-        <div id="purple" class="color purple right" data-color="purple"></div>
-        <div id="orange" class="color orange left" data-color="orange"></div>
-        <div id="green" class="color green left" data-color="green"></div>
-        <button id="startButton" class="startBtn" onclick="startGame()">Start game</button>
+      <div id="blue" class="color blue left" data-color="blue"></div>
+      <div id="purple" class="color purple right" data-color="purple"></div>
+      <div id="orange" class="color orange left" data-color="orange"></div>
+      <div id="green" class="color green left" data-color="green"></div>
+      <button id="startButton" class="startBtn" onclick="startGame()">
+        Start game
+      </button>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script src="game.js"></script>
-</body>
+  </body>
 </html>
