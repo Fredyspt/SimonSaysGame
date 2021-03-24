@@ -109,8 +109,6 @@ class Game{
         this.colors.green.addEventListener('click', this.chooseColor)
         this.colors.purple.addEventListener('click', this.chooseColor)
         this.colors.orange.addEventListener('click', this.chooseColor)
-        console.log('Event Listeners Activated')
-
         // addEventListener will pass an event as a parameter to this.chooseColor
     }
 
@@ -119,7 +117,6 @@ class Game{
         this.colors.green.removeEventListener('click', this.chooseColor)
         this.colors.purple.removeEventListener('click', this.chooseColor)
         this.colors.orange.removeEventListener('click', this.chooseColor)
-        console.log('Event Listeners Deactivated')
     }
 
 
