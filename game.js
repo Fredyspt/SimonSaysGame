@@ -52,7 +52,7 @@ class Game{
         this.sequencePos = 0
         this.lightSequence()
         // Until sequence lighting is finished, click events are activated
-        this.addClickEvents()
+        setTimeout(()=> this.addClickEvents(), 1000*(this.level-1))
     }
 
     numberToColor(number){
