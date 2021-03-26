@@ -3,7 +3,9 @@ const purple = document.getElementById('purple')
 const orange = document.getElementById('orange')
 const green = document.getElementById('green')
 const startButton = document.getElementById('startButton')
-const LEVELS = 4
+const cpu = document.getElementById('cpu')
+const player = document.getElementById('player')
+const LEVELS = 10
 
 class Game{
     constructor(){
@@ -19,6 +21,7 @@ class Game{
         // created will now be the button itself, instead of the game
         this.nextLevel = this.nextLevel.bind(this)
         this.chooseColor = this.chooseColor.bind(this)
+        this.turnOffTurnIndicator()
         this.toggleStartButton()
         this.level = 1
         this.colors = {
@@ -37,7 +40,23 @@ class Game{
         } else {
             // Adds CSS class 
             startButton.classList.add('hide')
+            this.cpuTurn()
         }
+    }
+
+    turnOffTurnIndicator(){
+        player.classList.remove('active')
+        cpu.classList.remove('active')
+    }
+
+    playerTurn(){
+        player.classList.add('active')
+        cpu.classList.remove('active')
+    }
+
+    cpuTurn(){
+        player.classList.remove('active')
+        cpu.classList.add('active')
     }
 
     generateSequence(){
@@ -51,8 +70,10 @@ class Game{
     nextLevel(){
         this.sequencePos = 0
         this.lightSequence()
+        this.cpuTurn()
         // Until sequence lighting is finished, click events are activated
         setTimeout(()=> this.addClickEvents(), 1000*(this.level-1))
+        setTimeout(()=> this.playerTurn(), 1000*this.level)
     }
 
     numberToColor(number){
